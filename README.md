@@ -8,6 +8,7 @@ vagrant plugin install vagrant-hostmanager
 ## If you dont use vagrant
 
 If you are not behind dns you will have to add hosts to each node /etc/hosts
+
 You will have to set the hosts up ssh passwordless
 
 ```
