@@ -30,6 +30,7 @@ ansible-vault create vault
 ### Enter your own password and create the file with vi
 
 ```
+---
 vault_db_pass: MySecretPassword
 ```
 ###  You can enter the password at the command line or create a file
