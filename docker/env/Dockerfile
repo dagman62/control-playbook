@@ -14,8 +14,7 @@ COPY ansible_rsa.pub /home/ansible/.ssh/id_rsa.pub
 COPY ansible_rsa.pub /home/ansible/.ssh/authorized_keys
 COPY ansible/	/home/ansible
 RUN chown -R ansible:ansible /home/ansible/ \
-    && echo "ansible ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers \
-    && chmod 600 /home/ansible/.vault_db_pass.txt
+    && echo "ansible ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 # Following lines taken from: https://github.com/tianon/dockerfiles
 #
