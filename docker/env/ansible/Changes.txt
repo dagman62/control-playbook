@@ -1,0 +1,29 @@
+diff --git a/ansible/.keep b/ansible/.keep
+deleted file mode 100644
+index e69de29..0000000
+diff --git a/ansible/ansible.cfg b/ansible/ansible.cfg
+new file mode 100644
+index 0000000..579001e
+--- /dev/null
++++ b/ansible/ansible.cfg
+@@ -0,0 +1,2 @@
++[defaults]
++inventory = ./dev
+diff --git a/ansible/dev b/ansible/dev
+new file mode 100644
+index 0000000..4861c2d
+--- /dev/null
++++ b/ansible/dev
+@@ -0,0 +1,12 @@
++[loadbalancer]
++lb01
++
++[webserver]
++app01
++app02
++
++[database]
++db01
++
++[control]
++control ansible_connection=local
