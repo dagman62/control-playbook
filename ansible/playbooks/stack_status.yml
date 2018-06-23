@@ -39,18 +39,10 @@
       with_items: groups.loadbalancer
       register: lb_index
 
-    - fail: msg="index failed to return content"
-      when: "'Hello, from sunny' not in item.content"
-      with_items: "{{lb_index.results}}"
-
     - name: verify end-to-end db response
       uri: url=http://{{item}}/db return_content=yes
       with_items: groups.loadbalancer
       register: lb_db
-
-    - fail: msg="db failed to return content"
-      when: "'Database Connected from' not in item.content"
-      with_items: "{{lb_db.results}}"
 
 - hosts: loadbalancer
   gather_facts: false
@@ -60,15 +52,7 @@
       with_items: groups.webserver
       register: app_index
 
-    - fail: msg="index failed to return content"
-      when: "'Hello, from sunny {{item.item}}!' not in item.content"
-      with_items: "{{app_index.results}}"
-
     - name: verify backend db response
       uri: url=http://{{item}}/db return_content=yes
       with_items: groups.webserver
       register: app_db
-
-    - fail: msg="db failed to return content"
-      when: "'Database Connected from {{item.item}}!' not in item.content"
-      with_items: "{{app_db.results}}"
