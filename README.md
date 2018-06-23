@@ -38,3 +38,5 @@ vault_db_pass: MySecretPassword
 echo "MySecretPassword" > ./ansible/.vault_pass.txt
 ```
 ### This file is referenced in ./ansible/ansible.cfg
+
+### change the permissions on .vault_pass.txt to 600
