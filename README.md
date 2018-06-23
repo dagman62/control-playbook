@@ -60,4 +60,16 @@ apt-add-repository ppa:ansible/ansible
 apt-get update
 apt-get install -y ansible
 ```
+### To run all the playbooks
+
+```bash
+sudo su - ansible
+ansible-playbook site.yml
+```
+### to test your installs
+
+```bash
+ansible-playbook playbook/stack_status.yml
+```
+
 [Ansible Documentation](https://docs.ansible.com)
